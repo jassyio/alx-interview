@@ -33,7 +33,7 @@ def solve_queens(row, n, solution):
     """
     Function that finds the solution recursively, from the root down
     """
-    if (row == n):
+    if row == n:
         print(solution)
     else:
         for col in range(n):
@@ -52,6 +52,7 @@ def main(n):
     """ From root(0) down(n) """
     solve_queens(0, n, solution)
 
+
 if __name__ == '__main__':
     """ Validate the arguments from OS """
     if len(sys.argv) != 2:
@@ -59,14 +60,12 @@ if __name__ == '__main__':
         sys.exit(1)
     try:
         i = int(sys.argv[1])
-    except BaseException:
+    except ValueError:
         print('N must be a number')
         sys.exit(1)
-    i = int(sys.argv[1])
     if i < 4:
         print('N must be at least 4')
         sys.exit(1)
 
     """ Calling the main function """
     main(i)
-    
